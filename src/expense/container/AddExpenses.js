@@ -32,6 +32,7 @@ export default function AddExpenses() {
         console.log(values);
         ExpenseService.addExpenses(values).then(res => {
             // setShowToast(true);
+            alert("Item Saved");
             console.log(res);
             // setTimeout(() => {
             //     setShowToast(false);

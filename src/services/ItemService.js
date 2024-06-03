@@ -2,7 +2,8 @@ import apiClient from "../helper/apiClient";
 
 const ItemService={
     getAllCategoryAndItem,
-    getItemForCategory
+    getItemForCategory,
+    addNewItemtoCateg
 }
 
 function getAllCategoryAndItem() {
@@ -12,6 +13,11 @@ function getAllCategoryAndItem() {
 }
 function getItemForCategory(id){
     return apiClient.get('/Items/GetItemForCategory?id='+id)
+                    .then(res=>res)
+                    .catch(err=>err);
+}
+function addNewItemtoCateg(model){
+    return apiClient.get('/Items/AddItems',model)
                     .then(res=>res)
                     .catch(err=>err);
 }

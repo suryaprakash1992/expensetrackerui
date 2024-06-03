@@ -14,7 +14,7 @@ function App() {
           <ExpenseLayout />
         </Suspense>
       }></Route>
-      <Route path="/*" element={<Layout />}></Route>
+      <Route path="/*" element={<ExpenseLayout />}></Route>
     </Routes>
   );
 }

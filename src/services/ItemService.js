@@ -17,7 +17,7 @@ function getItemForCategory(id){
                     .catch(err=>err);
 }
 function addNewItemtoCateg(model){
-    return apiClient.get('/Items/AddItems',model)
+    return apiClient.post('/Items/AddItems',model)
                     .then(res=>res)
                     .catch(err=>err);
 }

@@ -8,12 +8,12 @@ import ItemService from '../../services/ItemService';
 
 const initialValue = {
   categoryId: '',
-  itemId: '',
+  itemName: '',
 }
 
 const schema = Yup.object({
   categoryId: Yup.string().required('Please Select Category'),
-  itemId: Yup.string().required('Please Enter ItemName'),
+  itemName: Yup.string().required('Please Enter ItemName'),
 });
 
 export default function AddItems() {
@@ -50,10 +50,14 @@ export default function AddItems() {
                   name="categoryId"
                   placeholder="Choose Category..."
                   options={categdata}
+                  onChange={(selectedCategOption) => {
+                    setFieldValue("categoryId", selectedCategOption ? selectedCategOption.value : "");
+                  }}
                 />
               </div>
               <div className="mb-3">
-                <Field type="text" placeholder="ItemName" name="itemId" className="form-control" />
+                <Field type="text" placeholder="ItemName" name="itemName" className="form-control" />
+                <ErrorMessage component="label" className='text-danger' name='itemName'></ErrorMessage>
               </div>
               <div className="mb-3">
                 <input type="submit" value="Save" className="btn btn-primary" />

@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import CategoryService from '../../services/CategoryService';
 import ExpenseService from '../../services/ExpenseService';
 import ItemService from '../../services/ItemService';
+import DailyExpense from './DailyExpense';
 
 // import ToastMessage from '../../shared/ToastMsg';
 const initialValue = {
@@ -110,7 +111,7 @@ export default function AddExpenses() {
 
                             <div className="mb-3">
 
-                                <Field type="text" placeholder="Amount in ₹" name="amount" className="form-control" />
+                                <Field type="number" placeholder="Amount in ₹" name="amount" className="form-control" />
                                 <ErrorMessage component="label" className='text-danger' name='amount'></ErrorMessage>
                             </div>
                             <div className="mb-3">
@@ -141,6 +142,7 @@ export default function AddExpenses() {
                     )
                 }}
             </Formik>
+            <DailyExpense/>
         </div>
     )
 }
